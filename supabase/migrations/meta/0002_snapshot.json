@@ -1,0 +1,91 @@
+{
+  "id": "53b65348-f359-4611-9ab3-05353b783fda",
+  "prevId": "51a19d53-fffb-4b6c-9d4e-f9f5d6ddbe98",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.artists_table": {
+      "name": "artists_table",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "artist_name": {
+          "name": "artist_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "manager_email": {
+          "name": "manager_email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "booking_agent_email": {
+          "name": "booking_agent_email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "artists_table_artist_name_unique": {
+          "name": "artists_table_artist_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "artist_name"
+          ]
+        }
+      }
+    },
+    "public.festival_table": {
+      "name": "festival_table",
+      "schema": "",
+      "columns": {
+        "festival_id": {
+          "name": "festival_id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "festival_name": {
+          "name": "festival_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "festival_start_date": {
+          "name": "festival_start_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "festival_end_date": {
+          "name": "festival_end_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE "artists_table" ADD COLUMN "booking_agent_email" text;
