@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { addArtistSchema } from "@/lib/forms/schema";
+import { Card, CardContent } from "./ui/card";
 
 const initialState: AddArtistFormState = {
   code: undefined,
@@ -40,40 +41,42 @@ export function ArtistForm() {
   const [state, formAction] = useFormState(addArtist, initialState);
 
   return (
-    <Form {...methods}>
-      <form action={formAction} className="space-y-8">
-        <FormField
-          control={methods.control}
-          name="artistName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Artist Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Artist Name" {...field} />
-              </FormControl>
-              <FormDescription />
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={methods.control}
-          name="managerEmail"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Manager Email</FormLabel>
-              <FormControl>
-                <Input placeholder="Manager Email" {...field} />
-              </FormControl>
-              <FormDescription />
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        {state.message}
+    <>
+      <Form {...methods}>
+        <form action={formAction} className="space-y-8">
+          <FormField
+            control={methods.control}
+            name="artistName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Artist Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Artist Name" {...field} />
+                </FormControl>
+                <FormDescription />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={methods.control}
+            name="managerEmail"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Manager Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="Manager Email" {...field} />
+                </FormControl>
+                <FormDescription />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          {state.message}
 
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+          <Button type="submit">Submit</Button>
+        </form>
+      </Form>
+    </>
   );
 }

@@ -1,21 +1,28 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <h1>Artist Email Database</h1>
+    <div className="space-y-6">
+      <CardTitle>Artist Email Database</CardTitle>
       <br />
-      <div className="flex flex-col">
-        <h2>Artist Database</h2>
-        <Button className="mt-10">
-          <Link href="/artists">Artist DB</Link>
-        </Button>
-        <h2>Festival Database</h2>
-        <Button className="mt-10">
-          <Link href="/festivals">Festival DB</Link>
-        </Button>
-      </div>
-    </main>
+      <Card>
+        <CardTitle>Artist Database</CardTitle>
+        <CardContent>
+          <Button className="mt-10">
+            <Link href="/artists">Artist DB</Link>
+          </Button>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardTitle>Festival Database</CardTitle>
+        <CardContent>
+          <Button className="mt-10">
+            <Link href="/festivals">Festival DB</Link>
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

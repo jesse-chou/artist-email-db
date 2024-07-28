@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Sidebar } from "@/components/Sidebar";
+import { SidebarNavbarWrapper } from "@/components/sidebar/SidebarNavbarWrapper";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,7 +27,9 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Sidebar>{children}</Sidebar>
+        <SidebarNavbarWrapper>
+          <main className="p-4 sm:ml-64 pt-20">{children}</main>
+        </SidebarNavbarWrapper>
       </body>
     </html>
   );

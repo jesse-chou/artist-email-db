@@ -1,4 +1,4 @@
-"use server"
+'use server'
 
 import { artistTable } from "@/db/schema"
 import { addArtistSchema } from "../forms/schema"

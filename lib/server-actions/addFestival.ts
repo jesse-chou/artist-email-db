@@ -1,4 +1,4 @@
-"use server"
+'use server'
 
 import { festivalTable } from "@/db/schema"
 import { addFestivalSchema } from "../forms/schema"
@@ -8,11 +8,11 @@ import { ZodError } from "zod"
 export type AddFestivalFormState = {
   code: number | undefined;
   message?: string;
-  errors?: any;
+  errors?: Record<string, string[]>,
   fieldValues: {
     festivalName: string,
-    festivalStartDate: Date | null,
-    festivalEndDate: Date | null 
+    festivalStartDate: Date,
+    festivalEndDate: Date 
   }
 }
 
@@ -44,9 +44,9 @@ export default async function addFestival(prevState: AddFestivalFormState, formD
       errors: error.format(),
       fieldValues: {
         festivalName: formData.get('festivalName') as string,
-        festivalStartDate: formData.get('festivalStartDate'),
+        festivalStartDate: formData.get('festivalStartDate') as Date,
         festivalEndDate: formData.get('festivalEndDate')
       }
     }
-  }
+  }  
 }

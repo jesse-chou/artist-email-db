@@ -9,24 +9,23 @@ import {
   TableRow,
 } from "./ui/table";
 import { artistTable } from "@/db/schema";
+import { Card, CardContent } from "./ui/card";
 
 export async function ArtistTable() {
-  const data = await db.select().from(artistTable);
-
-  console.log("data", data);
+  const artistData = await db.select().from(artistTable);
 
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableCaption>A list of artists in the EDM industry</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">ID</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
+          <TableHead>Artist Name</TableHead>
+          <TableHead>Manager Email</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((artist) => (
+        {artistData.map((artist) => (
           <TableRow key={artist.id}>
             <TableCell className="font-medium">{artist.id}</TableCell>
             <TableCell className="font-medium">{artist.artistName}</TableCell>
