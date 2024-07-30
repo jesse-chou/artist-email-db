@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="space-y-6">
-      <CardTitle>Artist Email Database</CardTitle>
+    <div className="space-y-6 flex-auto ">
+      <CardTitle className="justify-center">Artist Email Database</CardTitle>
       <br />
-      <Card>
+      <Card className="p-4 w-fit">
         <CardTitle>Artist Database</CardTitle>
         <CardContent>
           <Button className="mt-10">
@@ -15,7 +15,7 @@ export default function Home() {
           </Button>
         </CardContent>
       </Card>
-      <Card>
+      <Card className="p-4 w-fit">
         <CardTitle>Festival Database</CardTitle>
         <CardContent>
           <Button className="mt-10">

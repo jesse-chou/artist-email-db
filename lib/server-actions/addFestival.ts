@@ -24,6 +24,8 @@ export default async function addFestival(prevState: AddFestivalFormState, formD
       festivalEndDate: formData.get('festivalEndDate')
     })
 
+    console.log('festivalData', festivalData)
+
     await db.insert(festivalTable).values({
       festivalName: festivalData.festivalName,
       festivalStartDate: festivalData.festivalStartDate,
